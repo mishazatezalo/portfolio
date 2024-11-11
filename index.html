@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1 class="misha"> mishaa</h1><h1 class="zatezalo">zaatezaalo</h1>
+    </header>
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Welcome to my portfolio! :)</p>
+    <p>Hi! I'm Misha. I'm currently a third-year computer science major @ Penn State - main campus 
+        with experience in full stack development and UX/UI design. I love solving problems and bringing beautiful ideas to life through code.</p>
+        <p> My coding journey started in 2020 during the pandemic where I was introduced to web design technologies through Kode With Klossy.
+            Since then, I've particpated in Girls Who Code, Google's Code next program, and undergraduate reaearch at Penn State.
+        </p>
+        <p> What I love most about computer science is the endless possibilities it offers. We live in a hyper-evolving digital world shaped by computer science. From websites to music, from cars to restaurants, and from mobile applications to countless other innovations—computer science is everywhere. 
+            It is omnipresent and will continue to be an integral part of our future.
+        </p>
+    </section>
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="slider-container">
+            <button class="slider-button prev" onclick="slide('prev')">&#8249;</button>
+            <div class="slider-wrapper">
+                <div class="slider">
+                    <div class="project card">
+                        <img src="images/lionlink.png" alt="LIONLINK Screenshot">
+                        <h3 class="projectName">LionLink</h3>
+                    </div>
+                    <div class="card">
+                        <h3> Why? </h3>
+                        <p>LionLink was created to address a significant problem many students face on large university campuses: loneliness and difficulty forming connections in a sea of over 50,000 people. With so many students and events happening simultaneously, it can be overwhelming and isolating for students to find a sense of belonging. LionLink’s goal is to provide a safe, engaging platform where students can discover events, meet new people, and form meaningful connections. By focusing on creating a digital space that fosters community, LionLink aims to solve the problem of campus isolation and encourage social engagement.</p>
+                    </div>
+                    <div class="card">
+                        <h3>UX/UI Design</h3>
+                        <p>From a UI/UX design perspective, the name LionLink was chosen to reflect the university’s mascot and symbolize connection between students. The color scheme was crafted with soft yet energetic tones—blending school pride with a welcoming atmosphere. The layout was designed to be simple and user-friendly, ensuring that students can easily browse events, connect with peers, and explore campus activities without feeling overwhelmed. A consistent visual hierarchy, with clear calls to action and smooth navigation, ensures that users can intuitively find what they’re looking for, creating a positive, engaging user experience.</p>
+                    </div>
+                    <div class="card">
+                        <h3> Full-Stack Implementation </h3>
+                        <p>On the full-stack engineering side, I used React for the front-end and Node.js with MongoDB for the back-end to create a scalable platform that could handle hundreds of users concurrently. The platform features secure user authentication and real-time updates for events, allowing students to interact with live data and stay up-to-date with campus activities. I also implemented a web scraper to automate event data collection, reducing manual input by 80%. The seamless integration between the front-end and back-end ensured fast load times, smooth interactions, and a reliable platform, allowing LionLink to deliver on its promise of fostering connection in a large university setting.</p>
+                    </div>
+                    <div class="card">
+                        <h3> Future Improvements</h3>
+                        <p>Currently, I’m working on revamping the design of LionLink to enhance both functionality and aesthetics. I’m focusing on improving the overall user experience by streamlining navigation, updating the color palette to create a more modern and engaging feel, and optimizing the layout for better accessibility across all devices. Additionally, I’m integrating user feedback to refine features, making the platform even more intuitive and responsive. This redesign aims to make LionLink a more immersive and effective tool for students to connect and engage with their campus community.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="slider-button next" onclick="slide('next')">&#8250;</button>
+        </div>
+    </section>
+    
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>HTML, CSS, JavaScript</li>
+            <li>React.js</li>
+            <li>Node.js</li>
+            <li>Python</li>
+            <li>Git & GitHub</li>
+        </ul>
+    </section>
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>If you'd like to work together or have any questions, feel free to reach out:</p>
+        <p>Email: <a href="mailto:mishadzatezalo@gmail.com">mishadzatezalo@gmail.com</a></p>
+    </section>
+    <footer>
+        <p>&copy; 2024 Misha Zatezalo. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
