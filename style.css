@@ -141,7 +141,7 @@ section {
 
 .welcome-text {
     font-family: 'nexaHeavy', sans-serif;
-    font-size: 3rem;
+    font-size: 3.2rem;
     background: linear-gradient(45deg, #FF4797, #ff6bac);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
