@@ -709,186 +709,101 @@ h2 {
     border-radius: 20px;
 }
 @media screen and (max-width: 768px) {
-    /* Keep nav hidden */
+    /* Keep nav removed */
     nav {
         display: none !important;
     }
 
-    /* Restored skills animation */
+    /* Fix skills section - restore animation */
+    .skills-container {
+        height: 300px !important;
+        overflow: hidden !important;
+    }
+
     .skills-line {
-        font-size: 1.4rem !important;
-        animation: mobileScroll 15s linear infinite !important;
+        position: absolute !important;
+        font-size: 1.2rem !important;
+        animation: mobileSkillsScroll 20s linear infinite !important;
         white-space: nowrap !important;
-        margin-bottom: 0.8rem !important;
+        width: 100% !important;
     }
 
-    .skills-line:nth-child(odd) {
-        animation-direction: normal !important;
-    }
-
-    .skills-line:nth-child(even) {
-        animation-direction: reverse !important;
-    }
-
-    @keyframes mobileScroll {
+    @keyframes mobileSkillsScroll {
         0% {
             transform: translateX(100%);
-            opacity: 0;
-        }
-        10% {
-            opacity: 1;
-        }
-        90% {
-            opacity: 1;
         }
         100% {
             transform: translateX(-100%);
-            opacity: 0;
         }
     }
 
-    /* More compact project cards */
+    /* Dramatically reduce project card size */
+    .slider-container {
+        padding: 0 !important;
+        margin: 1rem auto !important;
+    }
+
     .card {
-        padding: 1rem !important;
-        margin: 0.5rem !important;
+        padding: 0.8rem !important;
+        margin: 0 !important;
+        max-height: 300px !important; /* Much shorter */
         min-height: auto !important;
-        max-height: 400px !important;
-        overflow-y: auto !important;
     }
 
     .card p {
-        font-size: 0.95rem !important;
-        line-height: 1.5 !important;
-        margin: 0.5rem 0 !important;
+        font-size: 0.9rem !important;
+        line-height: 1.4 !important;
+        margin: 0.3rem 0 !important;
     }
 
     .card h3 {
-        font-size: 1.4rem !important;
-        margin-bottom: 0.8rem !important;
-    }
-
-    .project.card {
-        padding: 1rem !important;
-    }
-
-    .project img {
-        max-height: 180px !important;
-        object-fit: contain !important;
+        font-size: 1.2rem !important;
         margin-bottom: 0.5rem !important;
     }
 
+    /* Make project images smaller */
+    .project img {
+        height: 120px !important; /* Much smaller */
+        margin-bottom: 0.3rem !important;
+    }
+
     .projectName {
-        font-size: 2rem !important;
-        margin: 0.5rem 0 !important;
+        font-size: 1.8rem !important;
+        margin: 0.3rem 0 !important;
     }
 
-    /* Fixed contact card styling */
-    #contact {
-        perspective: 1000px !important;
-        padding: 2rem !important;
-    }
-
+    /* Fix contact card - match desktop exactly */
     .card-container {
         width: 300px !important;
         height: 180px !important;
-        margin: 1rem auto !important;
         transform-style: preserve-3d !important;
-        transition: transform 0.8s ease !important;
-        cursor: pointer !important;
-        position: relative !important;
     }
 
-    .card-face {
+    .card-container.flipped {
+        transform: rotateY(180deg) !important;
+    }
+
+    .card-front, .card-back {
         position: absolute !important;
         width: 100% !important;
         height: 100% !important;
         backface-visibility: hidden !important;
-        border-radius: 15px !important;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2) !important;
     }
 
     .card-front {
         background: linear-gradient(135deg, #FF4797, #ff6bac) !important;
-        z-index: 1 !important;
     }
 
     .card-back {
-        background: linear-gradient(135deg, #0F0F1A 0%, #1A1A2E 100%) !important;
         transform: rotateY(180deg) !important;
-    }
-
-    .card-content {
-        padding: 1.5rem !important;
-    }
-
-    .card-info {
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: center !important;
-    }
-
-    .card-title2 {
-        font-size: 1.8rem !important;
-        margin-bottom: 0.2rem !important;
-    }
-
-    .card-subtitle {
-        font-size: 1rem !important;
-        margin-bottom: 1rem !important;
-    }
-
-    .card-detail {
-        font-size: 0.9rem !important;
-        margin-bottom: 0.5rem !important;
-    }
-
-    .contact-buttons {
-        gap: 0.8rem !important;
-        padding: 1.5rem !important;
-    }
-
-    .contact-button {
-        width: 75% !important;
-        padding: 0.7rem !important;
-        font-size: 0.9rem !important;
-    }
-
-    /* Slider container adjustments */
-    .slider-container {
-        padding: 0.5rem !important;
-        width: 92% !important;
-    }
-
-    .slider {
-        gap: 0.8rem !important;
-    }
-
-    /* Progress dots */
-    .slider-progress {
-        margin: 0.5rem 0 !important;
     }
 }
 
-/* Extra small devices */
-@media screen and (max-width: 480px) {
-    .skills-line {
-        font-size: 1.2rem !important;
-    }
-
-    .card {
-        max-height: 350px !important;
-    }
-
-    .projectName {
-        font-size: 1.8rem !important;
-    }
-
-    .card-container {
-        width: 280px !important;
-        height: 170px !important;
-    }
-
-    .card-title2 {
-        font-size: 1.6rem !important;
-    }
+/* Stagger skills animations */
+@media screen and (max-width: 768px) {
+    .skills-line:nth-child(1) { animation-delay: -2s !important; }
+    .skills-line:nth-child(2) { animation-delay: -4s !important; }
+    .skills-line:nth-child(3) { animation-delay: -6s !important; }
+    .skills-line:nth-child(4) { animation-delay: -8s !important; }
+    .skills-line:nth-child(5) { animation-delay: -10s !important; }
 }
