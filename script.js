@@ -67,3 +67,40 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set initial active state
     cards[0].classList.add('active');
 });
+// Add this to your existing JavaScript file
+document.addEventListener('DOMContentLoaded', function() {
+    // Card flip functionality
+    const cardContainer = document.querySelector('.card-container');
+    if (cardContainer) {
+        cardContainer.addEventListener('click', function() {
+            this.classList.toggle('flipped');
+        });
+    }
+
+    // Touch support for slider
+    const slider = document.querySelector('.slider');
+    if (slider) {
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        slider.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        slider.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            const difference = touchStartX - touchEndX;
+            
+            if (Math.abs(difference) > 50) { // Minimum swipe distance
+                if (difference > 0) {
+                    slide('next');
+                } else {
+                    slide('prev');
+                }
+            }
+        }, { passive: true });
+    }
+});
+
+
+

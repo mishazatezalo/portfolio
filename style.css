@@ -11,196 +11,7 @@
     font-weight: normal;
     font-style: normal;
 }
-/* Base responsive adjustments */
-@media screen and (max-width: 768px) {
-    /* Header */
-    header h1.misha {
-        font-size: 6rem;
-        margin-bottom: -4rem;
-    }
 
-    header h1.zatezalo {
-        font-size: 4rem;
-        margin-bottom: 2rem;
-    }
-
-    /* Navigation */
-    nav {
-        flex-direction: column;
-        padding: 1rem;
-        gap: 1rem;
-    }
-
-    nav a {
-        padding-top: 1rem;
-        font-size: 1.8rem;
-    }
-
-    /* Sections */
-    section {
-        padding: 1rem;
-    }
-
-    h2 {
-        font-size: 3.5rem;
-        text-align: center;
-    }
-
-    /* About section */
-    .welcome-text {
-        font-size: 2.5rem;
-    }
-
-    .intro-card {
-        padding: 1.5rem;
-    }
-
-    .section-title {
-        font-size: 2.5rem;
-    }
-
-    .cards-wrapper {
-        grid-template-columns: 1fr;
-    }
-
-    /* Projects section */
-    .slider-container {
-        padding: 0.5rem;
-    }
-
-    .card {
-        padding: 1rem;
-        min-height: auto;
-    }
-
-    .card .projectName {
-        font-size: 2.5rem;
-    }
-
-    .card p {
-        font-size: 1rem;
-    }
-
-    .project img {
-        height: 200px;
-    }
-
-    /* Skills section */
-    .skills-container {
-        height: auto;
-        padding: 2rem 0;
-    }
-
-    .skills-line {
-        font-size: 1.2rem;
-        white-space: normal;
-        text-align: center;
-        animation: none;
-        margin-bottom: 1rem;
-    }
-
-    /* Contact section */
-    .card-container {
-        width: 100%;
-        max-width: 350px;
-    }
-
-    .card-title2 {
-        font-size: 1.8rem;
-    }
-
-    .contact-button {
-        width: 80%;
-    }
-}
-
-/* Extra small devices */
-@media screen and (max-width: 480px) {
-    header h1.misha {
-        font-size: 4rem;
-        margin-bottom: -2rem;
-    }
-
-    header h1.zatezalo {
-        font-size: 2.5rem;
-    }
-
-    .welcome-text {
-        font-size: 2rem;
-    }
-
-    h2 {
-        font-size: 3rem;
-    }
-
-    .card-item {
-        padding: 1rem;
-    }
-
-    .card-title {
-        font-size: 1.5rem;
-    }
-
-    .slider-button {
-        width: 30px;
-        height: 30px;
-    }
-
-    .contact-buttons {
-        padding: 1rem;
-    }
-}
-
-/* Fix slider on mobile */
-@media screen and (max-width: 768px) {
-    .slider {
-        gap: 1rem;
-    }
-
-    .card {
-        flex: 0 0 calc(100% - 1rem);
-        margin: 0 0.5rem;
-    }
-
-    .slider-container::before,
-    .slider-container::after {
-        width: 20px;
-    }
-}
-
-/* Prevent horizontal scroll */
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-/* Improve tap targets on mobile */
-@media (hover: none) {
-    nav a,
-    .contact-button,
-    .slider-button {
-        padding: 12px;
-        min-height: 44px;
-    }
-}
-
-/* Optimize animations for mobile */
-@media screen and (max-width: 768px) {
-    .card-item {
-        animation: none;
-    }
-
-    .skills-line {
-        animation: none;
-    }
-
-    /* Simplified hover states for touch devices */
-    .card:hover,
-    .card-item:hover,
-    .contact-button:hover {
-        transform: none;
-    }
-}
 body {
     font-family: 'nexaHeavy', sans-serif;
     margin: 0;
@@ -896,4 +707,84 @@ h2 {
     background: rgba(255, 255, 255, 0.1);
     transform: rotate(45deg) translate(50%, -50%);
     border-radius: 20px;
+}
+/* Mobile Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    /* Header size fixes */
+    header h1.misha {
+        font-size: 6rem !important;
+        margin-top: 2rem !important;
+        margin-bottom: -4rem !important;
+    }
+
+    header h1.zatezalo {
+        font-size: 4rem !important;
+        margin-bottom: 2rem !important;
+    }
+
+    /* Navigation adjustments */
+    nav {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    nav a {
+        font-size: 1.8rem;
+        padding-top: 1rem;
+    }
+
+    /* Card container fixes */
+    .card-container {
+        width: 90%;
+        max-width: 350px;
+    }
+    
+    /* Enable touch-based card flip */
+    .card-container.flipped {
+        transform: rotateY(180deg);
+    }
+
+    /* LionLink project fixes */
+    .slider {
+        gap: 1rem;
+    }
+
+    .card {
+        flex: 0 0 calc(100% - 1rem);
+        margin: 0 0.5rem;
+    }
+
+    .slider-button {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Extra small devices */
+@media screen and (max-width: 480px) {
+    header h1.misha {
+        font-size: 4rem !important;
+        margin-bottom: -2rem !important;
+    }
+
+    header h1.zatezalo {
+        font-size: 3rem !important;
+    }
+
+    nav a {
+        font-size: 1.5rem;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+    /* Prevent hover states on mobile */
+    .card-container:hover {
+        transform: none;
+    }
+
+    /* Enable touch-based flip */
+    .card-container.flipped {
+        transform: rotateY(180deg);
+    }
 }
