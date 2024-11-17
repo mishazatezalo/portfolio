@@ -708,122 +708,132 @@ h2 {
     transform: rotate(45deg) translate(50%, -50%);
     border-radius: 20px;
 }
-/* Mobile-only styles - won't affect desktop */
+/* Mobile-only styles - Add at the end of your CSS file */
 @media screen and (max-width: 768px) {
-    /* Navigation refinements */
+    /* Hide navigation on mobile */
     nav {
-        display: flex;
-        flex-direction: row !important;
-        justify-content: space-between;
-        padding: 1rem 1.5rem;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        margin: 0.5rem;
+        display: none !important;
     }
 
-    nav a {
-        font-size: 1.2rem !important;
-        padding-top: 0.5rem !important;
-        white-space: nowrap;
-        margin: 0 0.5rem;
+    /* Header refinements */
+    header h1.misha {
+        font-size: 3.5rem !important;
+        margin-top: 1.5rem !important;
+        margin-bottom: -1rem !important;
     }
 
-    /* Welcome text adjustments */
-    .welcome-text {
-        font-size: 2rem !important;
-        margin-bottom: 2rem !important;
-    }
-
-    /* Section headers */
-    h2 {
+    header h1.zatezalo {
         font-size: 2.5rem !important;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem !important;
     }
 
-    /* Project cards container */
+    /* Project card improvements */
     .slider-container {
-        width: 92% !important;
+        width: 90% !important;
         margin: 1rem auto;
         padding: 0.5rem;
     }
 
     .card {
-        padding: 1.2rem !important;
+        background: rgba(15, 15, 26, 0.95) !important;
+        border-radius: 16px !important;
+        padding: 1.5rem !important;
         margin: 0.5rem !important;
         min-height: auto !important;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 71, 151, 0.1);
     }
 
-    .card h3 {
-        font-size: 1.3rem !important;
-        margin-bottom: 0.8rem;
+    /* Project first card improvements */
+    .project.card {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding: 2rem 1.5rem !important;
     }
 
-    .card p {
-        font-size: 0.95rem !important;
-        line-height: 1.4;
-    }
-
-    /* Skills section */
-    .skills-line {
-        font-size: 1.1rem !important;
-        padding: 0.5rem;
-    }
-
-    /* Contact section */
-    .card-container {
+    .project.card img {
         width: 85% !important;
-        max-width: 320px;
-        height: 200px !important;
+        height: auto !important;
+        margin-bottom: 0.5rem !important;
     }
 
-    /* Intro card */
-    .intro-card {
-        padding: 1.5rem !important;
-        margin: 1rem auto !important;
-        width: 90% !important;
+    .project.card .projectName {
+        font-size: 2.5rem !important;
+        margin: 0.5rem 0 !important;
     }
 
-    .intro-card p {
-        font-size: 1rem !important;
-        line-height: 1.5;
-    }
-
-    /* Better touch targets */
+    /* Slider navigation improvements */
     .slider-button {
-        width: 35px !important;
-        height: 35px !important;
-        opacity: 0.8;
+        width: 40px !important;
+        height: 40px !important;
+        border-radius: 50% !important;
+        background: rgba(255, 71, 151, 0.9) !important;
+        backdrop-filter: blur(5px);
+        border: none !important;
+        box-shadow: 0 4px 12px rgba(255, 71, 151, 0.2) !important;
     }
 
-    /* Smooth scrolling */
-    html {
-        scroll-behavior: smooth;
+    .slider-button:active {
+        transform: translateY(-50%) scale(0.95) !important;
+    }
+
+    /* Progress dots styling */
+    .slider-progress {
+        margin-top: 1rem !important;
+    }
+
+    .progress-dot {
+        width: 8px !important;
+        height: 8px !important;
+        background: rgba(255, 71, 151, 0.2) !important;
+        transition: all 0.3s ease !important;
+    }
+
+    .progress-dot.active {
+        background: #FF4797 !important;
+        transform: scale(1.2) !important;
+    }
+
+    /* Contact card fixes */
+    .card-container {
+        width: 300px !important;
+        height: 180px !important;
+        margin: 2rem auto !important;
+    }
+
+    .card-front, .card-back {
+        border-radius: 12px !important;
+    }
+
+    .card-title2 {
+        font-size: 1.6rem !important;
+    }
+
+    .contact-button {
+        font-size: 0.9rem !important;
+        padding: 0.7rem !important;
+        width: 75% !important;
+    }
+
+    /* Better touch feedback */
+    .card:active,
+    .contact-button:active {
+        transform: scale(0.98) !important;
+    }
+
+    /* Smooth transitions */
+    .slider {
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
     }
 }
 
 /* Extra small devices */
 @media screen and (max-width: 480px) {
-    nav a {
-        font-size: 1rem !important;
-    }
-
-    .welcome-text {
-        font-size: 1.8rem !important;
-    }
-
-    .slider-container {
-        width: 95% !important;
-    }
-}
-
-/* Ensure smooth touch scrolling */
-@media (hover: none) {
-    .slider {
-        -webkit-overflow-scrolling: touch;
-        scroll-snap-type: x mandatory;
-    }
-
-    .card {
-        scroll-snap-align: start;
+    .card-container {
+        width: 280px !important;
+        height: 170px !important;
     }
 }
