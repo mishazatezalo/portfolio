@@ -67,40 +67,70 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set initial active state
     cards[0].classList.add('active');
 });
-// Add this to your existing JavaScript file
+// Add this after your existing JavaScript - Mobile-only enhancements
 document.addEventListener('DOMContentLoaded', function() {
-    // Card flip functionality
+    // Only run these functions if on mobile
+    if (window.innerWidth <= 768) {
+        addMobileCardFlip();
+        addMobileTouchSlider();
+    }
+});
+
+function addMobileCardFlip() {
     const cardContainer = document.querySelector('.card-container');
     if (cardContainer) {
-        cardContainer.addEventListener('click', function() {
-            this.classList.toggle('flipped');
+        let isFlipped = false;
+        
+        // Replace the existing click handler for mobile
+        cardContainer.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768) {
+                isFlipped = !isFlipped;
+                this.style.transform = isFlipped ? 'rotateY(180deg)' : 'rotateY(0)';
+            }
         });
     }
+}
 
-    // Touch support for slider
+function addMobileTouchSlider() {
     const slider = document.querySelector('.slider');
-    if (slider) {
-        let touchStartX = 0;
-        let touchEndX = 0;
+    if (!slider) return;
 
-        slider.addEventListener('touchstart', e => {
+    let touchStartX = 0;
+    let touchEndX = 0;
+    let isDragging = false;
+
+    // Add touch events only for mobile
+    slider.addEventListener('touchstart', function(e) {
+        if (window.innerWidth <= 768) {
             touchStartX = e.changedTouches[0].screenX;
-        }, { passive: true });
+            isDragging = true;
+        }
+    }, { passive: true });
 
-        slider.addEventListener('touchend', e => {
+    slider.addEventListener('touchend', function(e) {
+        if (window.innerWidth <= 768 && isDragging) {
             touchEndX = e.changedTouches[0].screenX;
             const difference = touchStartX - touchEndX;
             
             if (Math.abs(difference) > 50) { // Minimum swipe distance
                 if (difference > 0) {
-                    slide('next');
+                    slide('next'); // Using your existing slide function
                 } else {
-                    slide('prev');
+                    slide('prev'); // Using your existing slide function
                 }
             }
-        }, { passive: true });
+            isDragging = false;
+        }
+    }, { passive: true });
+}
+
+// Add mobile check for resize
+window.addEventListener('resize', function() {
+    const cardContainer = document.querySelector('.card-container');
+    if (cardContainer) {
+        // Reset transform on resize if switching from mobile to desktop
+        if (window.innerWidth > 768) {
+            cardContainer.style.transform = '';
+        }
     }
 });
-
-
-
