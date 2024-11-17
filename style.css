@@ -708,83 +708,122 @@ h2 {
     transform: rotate(45deg) translate(50%, -50%);
     border-radius: 20px;
 }
-/* Mobile Responsive Adjustments */
+/* Mobile-only styles - won't affect desktop */
 @media screen and (max-width: 768px) {
-    /* Header size fixes */
-    header h1.misha {
-        font-size: 6rem !important;
-        margin-top: 2rem !important;
-        margin-bottom: -4rem !important;
-    }
-
-    header h1.zatezalo {
-        font-size: 4rem !important;
-        margin-bottom: 2rem !important;
-    }
-
-    /* Navigation adjustments */
+    /* Navigation refinements */
     nav {
-        flex-direction: column;
-        padding: 1rem;
+        display: flex;
+        flex-direction: row !important;
+        justify-content: space-between;
+        padding: 1rem 1.5rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 0.5rem;
     }
 
     nav a {
-        font-size: 1.8rem;
-        padding-top: 1rem;
-    }
-
-    /* Card container fixes */
-    .card-container {
-        width: 90%;
-        max-width: 350px;
-    }
-    
-    /* Enable touch-based card flip */
-    .card-container.flipped {
-        transform: rotateY(180deg);
-    }
-
-    /* LionLink project fixes */
-    .slider {
-        gap: 1rem;
-    }
-
-    .card {
-        flex: 0 0 calc(100% - 1rem);
+        font-size: 1.2rem !important;
+        padding-top: 0.5rem !important;
+        white-space: nowrap;
         margin: 0 0.5rem;
     }
 
+    /* Welcome text adjustments */
+    .welcome-text {
+        font-size: 2rem !important;
+        margin-bottom: 2rem !important;
+    }
+
+    /* Section headers */
+    h2 {
+        font-size: 2.5rem !important;
+        margin-bottom: 1rem;
+    }
+
+    /* Project cards container */
+    .slider-container {
+        width: 92% !important;
+        margin: 1rem auto;
+        padding: 0.5rem;
+    }
+
+    .card {
+        padding: 1.2rem !important;
+        margin: 0.5rem !important;
+        min-height: auto !important;
+    }
+
+    .card h3 {
+        font-size: 1.3rem !important;
+        margin-bottom: 0.8rem;
+    }
+
+    .card p {
+        font-size: 0.95rem !important;
+        line-height: 1.4;
+    }
+
+    /* Skills section */
+    .skills-line {
+        font-size: 1.1rem !important;
+        padding: 0.5rem;
+    }
+
+    /* Contact section */
+    .card-container {
+        width: 85% !important;
+        max-width: 320px;
+        height: 200px !important;
+    }
+
+    /* Intro card */
+    .intro-card {
+        padding: 1.5rem !important;
+        margin: 1rem auto !important;
+        width: 90% !important;
+    }
+
+    .intro-card p {
+        font-size: 1rem !important;
+        line-height: 1.5;
+    }
+
+    /* Better touch targets */
     .slider-button {
-        width: 35px;
-        height: 35px;
+        width: 35px !important;
+        height: 35px !important;
+        opacity: 0.8;
+    }
+
+    /* Smooth scrolling */
+    html {
+        scroll-behavior: smooth;
     }
 }
 
 /* Extra small devices */
 @media screen and (max-width: 480px) {
-    header h1.misha {
-        font-size: 4rem !important;
-        margin-bottom: -2rem !important;
-    }
-
-    header h1.zatezalo {
-        font-size: 3rem !important;
-    }
-
     nav a {
-        font-size: 1.5rem;
+        font-size: 1rem !important;
+    }
+
+    .welcome-text {
+        font-size: 1.8rem !important;
+    }
+
+    .slider-container {
+        width: 95% !important;
     }
 }
 
-/* Touch device optimizations */
+/* Ensure smooth touch scrolling */
 @media (hover: none) {
-    /* Prevent hover states on mobile */
-    .card-container:hover {
-        transform: none;
+    .slider {
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
     }
 
-    /* Enable touch-based flip */
-    .card-container.flipped {
-        transform: rotateY(180deg);
+    .card {
+        scroll-snap-align: start;
     }
 }
