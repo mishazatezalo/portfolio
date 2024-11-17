@@ -708,63 +708,130 @@ h2 {
     transform: rotate(45deg) translate(50%, -50%);
     border-radius: 20px;
 }
+
 @media screen and (max-width: 768px) {
+    /* Prevent horizontal scroll */
+    html, body {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        position: relative !important;
+    }
+
+    /* Header size fix */
+    header h1.misha {
+        font-size: 3rem !important;
+        margin-top: 1rem !important;
+        margin-bottom: -1rem !important;
+    }
+
+    header h1.zatezalo {
+        font-size: 2rem !important;
+        margin-bottom: 1rem !important;
+    }
+
     /* Keep nav removed */
     nav {
         display: none !important;
     }
 
-    /* Fix skills section - restore animation */
+    /* Smaller section headers */
+    h2 {
+        font-size: 2.5rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    /* Smaller welcome text */
+    .welcome-text {
+        font-size: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    /* Fix skills animation */
     .skills-container {
         height: 300px !important;
         overflow: hidden !important;
+        margin: 1rem 0 !important;
     }
 
     .skills-line {
         position: absolute !important;
-        font-size: 1.2rem !important;
-        animation: mobileSkillsScroll 20s linear infinite !important;
+        font-size: 1.1rem !important;
         white-space: nowrap !important;
         width: 100% !important;
+        text-align: center !important;
+        opacity: 0 !important;
     }
 
-    @keyframes mobileSkillsScroll {
+    .skills-line:nth-child(odd) {
+        animation: slideLeft 15s linear infinite !important;
+    }
+
+    .skills-line:nth-child(even) {
+        animation: slideRight 15s linear infinite !important;
+    }
+
+    @keyframes slideLeft {
+        0% {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        10% {
+            opacity: 1;
+        }
+        90% {
+            opacity: 1;
+        }
+        100% {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+    }
+
+    @keyframes slideRight {
         0% {
             transform: translateX(100%);
+            opacity: 0;
+        }
+        10% {
+            opacity: 1;
+        }
+        90% {
+            opacity: 1;
         }
         100% {
             transform: translateX(-100%);
+            opacity: 0;
         }
     }
 
-    /* Dramatically reduce project card size */
+    /* Stagger skills animations */
+    .skills-line:nth-child(1) { top: 0%; animation-delay: 0s !important; }
+    .skills-line:nth-child(2) { top: 20%; animation-delay: -3s !important; }
+    .skills-line:nth-child(3) { top: 40%; animation-delay: -6s !important; }
+    .skills-line:nth-child(4) { top: 60%; animation-delay: -9s !important; }
+    .skills-line:nth-child(5) { top: 80%; animation-delay: -12s !important; }
+
+    /* Project cards */
     .slider-container {
-        padding: 0 !important;
-        margin: 1rem auto !important;
+        width: 92% !important;
+        padding: 0 1rem !important;
+        margin: 0.5rem auto !important;
+    }
+
+    .slider {
+        gap: 0 !important; /* Remove gap for smooth sliding */
     }
 
     .card {
-        padding: 0.8rem !important;
+        padding: 1rem !important;
         margin: 0 !important;
-        max-height: 300px !important; /* Much shorter */
         min-height: auto !important;
+        max-height: 300px !important;
     }
 
-    .card p {
-        font-size: 0.9rem !important;
-        line-height: 1.4 !important;
-        margin: 0.3rem 0 !important;
-    }
-
-    .card h3 {
-        font-size: 1.2rem !important;
-        margin-bottom: 0.5rem !important;
-    }
-
-    /* Make project images smaller */
     .project img {
-        height: 120px !important; /* Much smaller */
-        margin-bottom: 0.3rem !important;
+        max-height: 150px !important;
+        margin-bottom: 0.5rem !important;
     }
 
     .projectName {
@@ -772,38 +839,39 @@ h2 {
         margin: 0.3rem 0 !important;
     }
 
-    /* Fix contact card - match desktop exactly */
+    /* Contact card */
     .card-container {
         width: 300px !important;
         height: 180px !important;
         transform-style: preserve-3d !important;
     }
 
-    .card-container.flipped {
-        transform: rotateY(180deg) !important;
-    }
-
-    .card-front, .card-back {
-        position: absolute !important;
-        width: 100% !important;
-        height: 100% !important;
-        backface-visibility: hidden !important;
-    }
-
-    .card-front {
-        background: linear-gradient(135deg, #FF4797, #ff6bac) !important;
-    }
-
-    .card-back {
-        transform: rotateY(180deg) !important;
+    /* Adjust section padding */
+    section {
+        padding: 1rem !important;
+        overflow: hidden !important; /* Prevent horizontal scroll */
     }
 }
 
-/* Stagger skills animations */
-@media screen and (max-width: 768px) {
-    .skills-line:nth-child(1) { animation-delay: -2s !important; }
-    .skills-line:nth-child(2) { animation-delay: -4s !important; }
-    .skills-line:nth-child(3) { animation-delay: -6s !important; }
-    .skills-line:nth-child(4) { animation-delay: -8s !important; }
-    .skills-line:nth-child(5) { animation-delay: -10s !important; }
+/* Extra small devices */
+@media screen and (max-width: 480px) {
+    header h1.misha {
+        font-size: 2.5rem !important;
+    }
+
+    header h1.zatezalo {
+        font-size: 1.8rem !important;
+    }
+
+    h2 {
+        font-size: 2rem !important;
+    }
+
+    .welcome-text {
+        font-size: 1.3rem !important;
+    }
+
+    .skills-line {
+        font-size: 1rem !important;
+    }
 }
