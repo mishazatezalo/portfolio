@@ -708,80 +708,94 @@ h2 {
     transform: rotate(45deg) translate(50%, -50%);
     border-radius: 20px;
 }
-/* Mobile-only styles */
 @media screen and (max-width: 768px) {
-    /* Prevent zoom/scroll issues */
-    html, body {
-        max-width: 100%;
-        overflow-x: hidden;
-        position: relative;
+    /* Keep nav hidden */
+    nav {
+        display: none !important;
     }
 
-    /* Header refinements */
-    header h1.misha {
-        font-size: 4rem !important;
-        margin-top: 2rem !important;
-        margin-bottom: -2rem !important;
+    /* Restored skills animation */
+    .skills-line {
+        font-size: 1.4rem !important;
+        animation: mobileScroll 15s linear infinite !important;
+        white-space: nowrap !important;
+        margin-bottom: 0.8rem !important;
     }
 
-    header h1.zatezalo {
-        font-size: 2.8rem !important;
-        margin-bottom: 1.5rem !important;
+    .skills-line:nth-child(odd) {
+        animation-direction: normal !important;
     }
 
-    /* Section headers */
-    h2 {
-        font-size: 3.2rem !important;
-        margin-bottom: 1rem !important;
-        text-align: center !important;
+    .skills-line:nth-child(even) {
+        animation-direction: reverse !important;
     }
 
-    /* Welcome text */
-    .welcome-text {
-        font-size: 2rem !important;
-        margin: 1rem 0 2rem 0 !important;
+    @keyframes mobileScroll {
+        0% {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        10% {
+            opacity: 1;
+        }
+        90% {
+            opacity: 1;
+        }
+        100% {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
     }
 
-    /* Project slider refinements */
-    .slider-container {
-        width: 92% !important;
-        margin: 1rem auto !important;
-        padding: 0.5rem !important;
-    }
-
-    .slider {
-        gap: 1rem !important;
-    }
-
+    /* More compact project cards */
     .card {
-        flex: 0 0 100% !important;
+        padding: 1rem !important;
+        margin: 0.5rem !important;
         min-height: auto !important;
-        padding: 1.5rem !important;
-        margin: 0 !important;
+        max-height: 400px !important;
+        overflow-y: auto !important;
     }
 
-    /* Project card content */
+    .card p {
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
+        margin: 0.5rem 0 !important;
+    }
+
+    .card h3 {
+        font-size: 1.4rem !important;
+        margin-bottom: 0.8rem !important;
+    }
+
     .project.card {
-        padding: 1.5rem !important;
+        padding: 1rem !important;
     }
 
     .project img {
-        height: auto !important;
-        max-height: 250px !important;
+        max-height: 180px !important;
         object-fit: contain !important;
+        margin-bottom: 0.5rem !important;
     }
 
     .projectName {
-        font-size: 2.8rem !important;
-        margin: 1rem 0 !important;
+        font-size: 2rem !important;
+        margin: 0.5rem 0 !important;
     }
 
-    /* Contact card fixes */
+    /* Fixed contact card styling */
+    #contact {
+        perspective: 1000px !important;
+        padding: 2rem !important;
+    }
+
     .card-container {
         width: 300px !important;
         height: 180px !important;
-        margin: 2rem auto !important;
+        margin: 1rem auto !important;
         transform-style: preserve-3d !important;
+        transition: transform 0.8s ease !important;
+        cursor: pointer !important;
+        position: relative !important;
     }
 
     .card-face {
@@ -789,10 +803,13 @@ h2 {
         width: 100% !important;
         height: 100% !important;
         backface-visibility: hidden !important;
+        border-radius: 15px !important;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2) !important;
     }
 
     .card-front {
         background: linear-gradient(135deg, #FF4797, #ff6bac) !important;
+        z-index: 1 !important;
     }
 
     .card-back {
@@ -804,46 +821,65 @@ h2 {
         padding: 1.5rem !important;
     }
 
+    .card-info {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+    }
+
     .card-title2 {
         font-size: 1.8rem !important;
+        margin-bottom: 0.2rem !important;
     }
 
-    /* Navigation buttons */
-    .slider-button {
-        width: 35px !important;
-        height: 35px !important;
-        background: rgba(255, 71, 151, 0.9) !important;
+    .card-subtitle {
+        font-size: 1rem !important;
+        margin-bottom: 1rem !important;
     }
 
-    /* Skills section */
-    .skills-container {
-        height: auto !important;
-        padding: 1rem 0 !important;
-    }
-
-    .skills-line {
-        font-size: 1.4rem !important;
-        white-space: normal !important;
+    .card-detail {
+        font-size: 0.9rem !important;
         margin-bottom: 0.5rem !important;
-        animation: none !important;
+    }
+
+    .contact-buttons {
+        gap: 0.8rem !important;
+        padding: 1.5rem !important;
+    }
+
+    .contact-button {
+        width: 75% !important;
+        padding: 0.7rem !important;
+        font-size: 0.9rem !important;
+    }
+
+    /* Slider container adjustments */
+    .slider-container {
+        padding: 0.5rem !important;
+        width: 92% !important;
+    }
+
+    .slider {
+        gap: 0.8rem !important;
+    }
+
+    /* Progress dots */
+    .slider-progress {
+        margin: 0.5rem 0 !important;
     }
 }
 
 /* Extra small devices */
 @media screen and (max-width: 480px) {
-    header h1.misha {
-        font-size: 3rem !important;
+    .skills-line {
+        font-size: 1.2rem !important;
     }
 
-    header h1.zatezalo {
-        font-size: 2.2rem !important;
+    .card {
+        max-height: 350px !important;
     }
 
-    h2 {
-        font-size: 2.8rem !important;
-    }
-
-    .welcome-text {
+    .projectName {
         font-size: 1.8rem !important;
     }
 
@@ -852,7 +888,7 @@ h2 {
         height: 170px !important;
     }
 
-    .projectName {
-        font-size: 2.5rem !important;
+    .card-title2 {
+        font-size: 1.6rem !important;
     }
 }
