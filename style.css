@@ -12,6 +12,11 @@
     font-style: normal;
 }
 
+@keyframes twinkle {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
 body {
     font-family: 'nexaHeavy', sans-serif;
     margin: 0;
@@ -20,21 +25,83 @@ body {
     line-height: 1.6;
     background-color: #171219;
     color: #fff;
-    overflow-x: hidden; /* Prevent horizontal scrollbar */
+    overflow-x: hidden;
+    position: relative;
 }
+
+body::before,
+body::after,
+body > div::before,
+body > div::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+body::before {
+    background-image: 
+        radial-gradient(1px 1px at 13% 17%, #FF4797, rgba(255, 71, 151, 0)),
+        radial-gradient(1px 1px at 28% 39%, #ff6bac, rgba(255, 107, 172, 0)),
+        radial-gradient(1px 1px at 67% 83%, #FF4797, rgba(255, 71, 151, 0)),
+        radial-gradient(1.5px 1.5px at 88% 12%, #ff6bac, rgba(255, 107, 172, 0));
+    background-repeat: repeat;
+    background-size: 373px 373px;
+    animation: twinkle 4s infinite;
+}
+
+body::after {
+    background-image: 
+        radial-gradient(1px 1px at 42% 8%, #FF4797, rgba(255, 71, 151, 0)),
+        radial-gradient(1px 1px at 73% 61%, #ff6bac, rgba(255, 107, 172, 0)),
+        radial-gradient(1.5px 1.5px at 19% 95%, #FF4797, rgba(255, 71, 151, 0)),
+        radial-gradient(2px 2px at 91% 32%, #ff6bac, rgba(255, 107, 172, 0));
+    background-repeat: repeat;
+    background-size: 521px 521px;
+    animation: twinkle 6s infinite 1s;
+}
+
+body > div::before {
+    background-image: 
+        radial-gradient(1px 1px at 5% 51%, #FF4797, rgba(255, 71, 151, 0)),
+        radial-gradient(1.5px 1.5px at 34% 26%, #ff6bac, rgba(255, 107, 172, 0)),
+        radial-gradient(1px 1px at 59% 72%, #FF4797, rgba(255, 71, 151, 0)),
+        radial-gradient(1.5px 1.5px at 81% 93%, #ff6bac, rgba(255, 107, 172, 0));
+    background-repeat: repeat;
+    background-size: 457px 457px;
+    animation: twinkle 5s infinite 2s;
+}
+
+body > div::after {
+    background-image: 
+        radial-gradient(1.5px 1.5px at 22% 79%, #FF4797, rgba(255, 71, 151, 0)),
+        radial-gradient(1px 1px at 47% 13%, #ff6bac, rgba(255, 107, 172, 0)),
+        radial-gradient(1.5px 1.5px at 63% 54%, #FF4797, rgba(255, 71, 151, 0)),
+        radial-gradient(1px 1px at 95% 87%, #ff6bac, rgba(255, 107, 172, 0));
+    background-repeat: repeat;
+    background-size: 389px 389px;
+    animation: twinkle 7s infinite 3s;
+}
+
 header {
     background: linear-gradient(45deg, #FF4797, #ff6bac);
     color: #171219;
     padding: 1rem;
     text-align: center;
-    overflow: hidden;  /* Ensure animations stay within bounds */
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
 
 header h1 {
     font-size: 8rem;
     font-family: 'stretchPro', sans-serif;
     margin: 0;
-    opacity: 0;  /* Start invisible */
+    opacity: 0;
 }
 
 header h1.misha {
@@ -49,7 +116,7 @@ header h1.zatezalo {
     font-size: 9rem;
     display: block;
     margin-bottom: 4rem;
-    animation: slideInName 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;  /* Delay second name */
+    animation: slideInName 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
 }
 
 @keyframes slideInName {
@@ -66,11 +133,12 @@ header h1.zatezalo {
     }
 }
 
-/* Add a subtle hover effect */
 header h1:hover {
     transform: scale(1.02);
     transition: transform 0.3s ease;
 }
+
+/* Rest of your existing CSS styles... */
 #about{
     padding-top: 2rem;
 }
@@ -151,11 +219,11 @@ section {
 
 .intro-card {
     padding: 2rem;
-    background: rgba(255, 71, 151, 0.05);
-    backdrop-filter: blur(5px);
+    background: linear-gradient(135deg, #FF4797, #ff6bac);
     border-radius: 15px;
     border: 1px solid rgba(255, 71, 151, 0.2);
     margin-bottom: 3rem;
+    color: white;
 }
 
 .section-title {
@@ -244,12 +312,12 @@ section {
 
 .passion-card {
     padding: 2rem;
-    background: rgba(255, 71, 151, 0.05);
-    backdrop-filter: blur(5px);
+    background: linear-gradient(135deg, #FF4797, #ff6bac);
     border-radius: 15px;
     border: 1px solid rgba(255, 71, 151, 0.2);
     position: relative;
     overflow: hidden;
+    color: white;
 }
 
 @keyframes float {
@@ -708,123 +776,170 @@ h2 {
     transform: rotate(45deg) translate(50%, -50%);
     border-radius: 20px;
 }
-/* Mobile-specific styles */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 3rem;
-        margin-top: 1rem;
-        margin-bottom: 0;
+
+@media screen and (max-width: 768px) {
+    /* Prevent horizontal scroll */
+    html, body {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        position: relative !important;
     }
 
+    /* Header size fix */
     header h1.misha {
-        font-size: 4rem;
-        margin-top: 2rem;
+        font-size: 3rem !important;
+        margin-top: 1rem !important;
+        margin-bottom: -1rem !important;
     }
 
     header h1.zatezalo {
-        font-size: 3rem;
-        margin-bottom: 1rem;
+        font-size: 2rem !important;
+        margin-bottom: 1rem !important;
     }
 
+    /* Keep nav removed */
     nav {
-        flex-direction: column;
-        margin: 0;
-        padding: 1rem 0;
+        display: none !important;
     }
 
-    nav a {
-        font-size: 1.5rem;
-        margin: 0.5rem 0;
-    }
-
-    section {
-        padding: 1rem;
-    }
-
-    .welcome-text {
-        font-size: 2rem;
-    }
-
-    .intro-card {
-        padding: 1.5rem;
-    }
-
-    .section-title {
-        font-size: 2.5rem;
-        text-align: center;
-    }
-
-    .cards-wrapper {
-        grid-template-columns: 1fr;
-    }
-
-    .card-item {
-        padding: 1.5rem;
-    }
-
+    /* Smaller section headers */
     h2 {
-        font-size: 3rem;
-        text-align: center;
+        font-size: 2.5rem !important;
+        margin-bottom: 1rem !important;
     }
 
-    #projects .project img {
-        height: auto;
+    /* Smaller welcome text */
+    .welcome-text {
+        font-size: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
     }
 
-    .slider-container {
-        padding: 1rem;
-    }
-
-    .slider {
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
-
-    .card {
-        padding: 1rem;
-    }
-
-    .card h3 {
-        font-size: 1.5rem;
-    }
-
+    /* Fix skills animation */
     .skills-container {
-        margin: 1rem 0;
+        height: 300px !important;
+        overflow: hidden !important;
+        margin: 1rem 0 !important;
     }
 
     .skills-line {
-        font-size: 1.5rem;
+        position: absolute !important;
+        font-size: 1.1rem !important;
+        white-space: nowrap !important;
+        width: 100% !important;
+        text-align: center !important;
+        opacity: 0 !important;
     }
 
-    #contact {
-        padding: 2rem 1rem;
+    .skills-line:nth-child(odd) {
+        animation: slideLeft 15s linear infinite !important;
     }
 
+    .skills-line:nth-child(even) {
+        animation: slideRight 15s linear infinite !important;
+    }
+
+    @keyframes slideLeft {
+        0% {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        10% {
+            opacity: 1;
+        }
+        90% {
+            opacity: 1;
+        }
+        100% {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+    }
+
+    @keyframes slideRight {
+        0% {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        10% {
+            opacity: 1;
+        }
+        90% {
+            opacity: 1;
+        }
+        100% {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+    }
+
+    /* Stagger skills animations */
+    .skills-line:nth-child(1) { top: 0%; animation-delay: 0s !important; }
+    .skills-line:nth-child(2) { top: 20%; animation-delay: -3s !important; }
+    .skills-line:nth-child(3) { top: 40%; animation-delay: -6s !important; }
+    .skills-line:nth-child(4) { top: 60%; animation-delay: -9s !important; }
+    .skills-line:nth-child(5) { top: 80%; animation-delay: -12s !important; }
+
+    /* Project cards */
+    .slider-container {
+        width: 92% !important;
+        padding: 0 1rem !important;
+        margin: 0.5rem auto !important;
+    }
+
+    .slider {
+        gap: 0 !important; /* Remove gap for smooth sliding */
+    }
+
+    .card {
+        padding: 1rem !important;
+        margin: 0 !important;
+        min-height: auto !important;
+        max-height: 300px !important;
+    }
+
+    .project img {
+        max-height: 150px !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    .projectName {
+        font-size: 1.8rem !important;
+        margin: 0.3rem 0 !important;
+    }
+
+    /* Contact card */
     .card-container {
-        width: 100%;
-        height: 200px;
+        width: 300px !important;
+        height: 180px !important;
+        transform-style: preserve-3d !important;
     }
 
-    .card-title2 {
-        font-size: 1.5rem;
+    /* Adjust section padding */
+    section {
+        padding: 1rem !important;
+        overflow: hidden !important; /* Prevent horizontal scroll */
+    }
+}
+
+/* Extra small devices */
+@media screen and (max-width: 480px) {
+    header h1.misha {
+        font-size: 2.5rem !important;
     }
 
-    .card-detail {
-        font-size: 0.8rem;
+    header h1.zatezalo {
+        font-size: 1.8rem !important;
     }
 
-    .contact-buttons {
-        gap: 0.5rem;
+    h2 {
+        font-size: 2rem !important;
     }
 
-    .contact-button {
-        font-size: 0.8rem;
-        width: 80%;
-        height: 30px;
+    .welcome-text {
+        font-size: 1.3rem !important;
     }
 
-    .pattern-overlay {
-        width: 100px;
-        height: 100px;
+    .skills-line {
+        font-size: 1rem !important;
     }
 }
