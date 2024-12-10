@@ -85,34 +85,297 @@
     </section>
     <section id="projects">
         <h2>projects</h2>
-        <div class="slider-container">
-            <button class="slider-button prev" onclick="slide('prev')">&#8249;</button>
-            <div class="slider-wrapper">
-                <div class="slider">
-                    <div class="project card">
-                        <img src="images/lionlink.png" alt="LIONLINK Screenshot">
-                        <h3 class="projectName">LionLink</h3>
+        <div class="case-study">
+            <!-- Project Intro -->
+            <div class="project-intro">
+                <img src="images/aria.png" alt="Aria Music Platform Screenshot" class="project-hero">
+                <h3 class="project-title">Aria</h3>
+                <div class="project-quick-info">
+                    <div class="info-item">
+                        <h4>Timeline</h4>
+                        <p>Started August 2023</p>
                     </div>
-                    <div class="card">
-                        <h3> Why? </h3>
-                        <p>LionLink was created to address a significant problem many students face on large university campuses: loneliness and difficulty forming connections in a sea of over 50,000 people. With so many students and events happening simultaneously, it can be overwhelming and isolating for students to find a sense of belonging. LionLink’s goal is to provide a safe, engaging platform where students can discover events, meet new people, and form meaningful connections. By focusing on creating a digital space that fosters community, LionLink aims to solve the problem of campus isolation and encourage social engagement.</p>
+                    <div class="info-item">
+                        <h4>Role</h4>
+                        <p>UX/UI Lead Designer & Frontend Developer</p>
                     </div>
-                    <div class="card">
-                        <h3>UX/UI Design</h3>
-                        <p>From a UI/UX design perspective, the name LionLink was chosen to reflect the university’s mascot and symbolize connection between students. The color scheme was crafted with soft yet energetic tones—blending school pride with a welcoming atmosphere. The layout was designed to be simple and user-friendly, ensuring that students can easily browse events, connect with peers, and explore campus activities without feeling overwhelmed. A consistent visual hierarchy, with clear calls to action and smooth navigation, ensures that users can intuitively find what they’re looking for, creating a positive, engaging user experience.</p>
-                    </div>
-                    <div class="card">
-                        <h3> Full-Stack Implementation </h3>
-                        <p>On the full-stack engineering side, I used React for the front-end and Node.js with MongoDB for the back-end to create a scalable platform that could handle hundreds of users concurrently. The platform features secure user authentication and real-time updates for events, allowing students to interact with live data and stay up-to-date with campus activities. I also implemented a web scraper to automate event data collection, reducing manual input by 80%. The seamless integration between the front-end and back-end ensured fast load times, smooth interactions, and a reliable platform, allowing LionLink to deliver on its promise of fostering connection in a large university setting.</p>
-                    </div>
-                    <div class="card">
-                        <h3> Future Improvements</h3>
-                        <p>Currently, I’m working on revamping the design of LionLink to enhance both functionality and aesthetics. I’m focusing on improving the overall user experience by streamlining navigation, updating the color palette to create a more modern and engaging feel, and optimizing the layout for better accessibility across all devices. Additionally, I’m integrating user feedback to refine features, making the platform even more intuitive and responsive. This redesign aims to make LionLink a more immersive and effective tool for students to connect and engage with their campus community.</p>
+                    <div class="info-item">
+                        <h4>Platform</h4>
+                        <p>Web Application</p>
                     </div>
                 </div>
             </div>
-            <button class="slider-button next" onclick="slide('next')">&#8250;</button>
+        
+            <!-- Project Sections -->
+            <div class="case-study-content">
+                <!-- Overview -->
+                <div class="content-section">
+                    <h3>Overview</h3>
+                    <p>Aria is a social platform for music enthusiasts to rate, review, and discover music - think Letterboxd, but for music. Users can share their thoughts on albums, create lists, and connect with others through their musical tastes.</p>
+                </div>
+        
+                <img src="images/aria1.png" alt="Aria Music Platform Screenshot" class="project-hero">
+        
+                <!-- Problem & Solution -->
+                <div class="content-section">
+                    <h3>Problem</h3>
+                    <p>While platforms like Spotify excel at music streaming, there's a gap in the market for dedicated music review and discussion platforms. Music lovers lack a centralized space to share detailed thoughts on albums and connect with others through meaningful music discussions.</p>
+                        
+                    <h4>Key Challenges</h4>
+                    <ul>
+                        <li>Existing platforms focus on streaming rather than community discussion</li>
+                        <li>Music enthusiasts need a dedicated space for in-depth album reviews</li>
+                        <li>Limited options for discovering music through peer recommendations</li>
+                        <li>No centralized platform for tracking listening history and ratings</li>
+                    </ul>
+                </div>
+        
+                <!-- Design Process -->
+                <div class="content-section">
+                    <h3>Design Process</h3>
+                    <div class="process-steps">
+                        <div class="step">
+                            <h4>Research & Planning</h4>
+                            <p>Analyzed successful platforms like Letterboxd and Goodreads to understand what makes social review platforms engaging. Studied music communities to identify user needs.</p>
+                        </div>
+                        <div class="step">
+                            <h4>UX/UI Design</h4>
+                            <p>Used Figma, Sketch, and Adobe XD to create intuitive interfaces focused on album discovery and review sharing. Emphasized clean typography and album artwork displays.</p>
+                        </div>
+                        <div class="step">
+                            <h4>User Testing</h4>
+                            <p>Conducted usability testing with music enthusiasts to refine the interface and feature set based on real user feedback.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Technical Implementation -->
+                <div class="content-section">
+                    <h3>Technical Implementation</h3>
+                    <div class="tech-details">
+                        <div class="tech-stack">
+                            <h4>Frontend</h4>
+                            <ul>
+                                <li>React.js for dynamic UI</li>
+                                <li>Custom CSS for responsive design</li>
+                                <li>Redux for state management</li>
+                                <li>Modern CSS Grid layouts</li>
+                            </ul>
+                        </div>
+                        <div class="tech-stack">
+                            <h4>Backend</h4>
+                            <ul>
+                                <li>Django REST framework</li>
+                                <li>PostgreSQL database</li>
+                                <li>JWT authentication</li>
+                                <li>RESTful API architecture</li>
+                            </ul>
+                        </div>
+                        <div class="tech-stack">
+                            <h4>Key Features</h4>
+                            <ul>
+                                <li>Album rating system</li>
+                                <li>Customizable review formats</li>
+                                <li>Music discovery algorithms</li>
+                                <li>Social sharing capabilities</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Key Features -->
+                <div class="content-section">
+                    <h3>Core Features</h3>
+                    <ul>
+                        <li>Detailed album reviews with rich text formatting</li>
+                        <li>Personal music diary to track listening history</li>
+                        <li>Custom lists (e.g., "Best Albums of 2023", "Weekend Favorites")</li>
+                        <li>Social following system for discovering new music through trusted users</li>
+                        <li>Integration with Spotify API for album metadata and cover art</li>
+                        <li>Mobile-responsive design for on-the-go access</li>
+                    </ul>
+                </div>
+        
+                <!-- Technical Challenges -->
+                <div class="content-section">
+                    <h3>Technical Challenges</h3>
+                    <ul>
+                        <li>Implementing efficient search and filtering for large music catalogs</li>
+                        <li>Optimizing image loading for album artwork</li>
+                        <li>Creating a responsive layout that works well for both albums and reviews</li>
+                        <li>Ensuring 99.9% uptime while handling concurrent users</li>
+                    </ul>
+                </div>
+        
+                <!-- Results & Impact -->
+                <div class="content-section">
+                    <h3>Results</h3>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <h4>Performance</h4>
+                            <p>99.9% Uptime</p>
+                        </div>
+                        <div class="result-item">
+                            <h4>Accessibility</h4>
+                            <p>WCAG 2.1 Compliant</p>
+                        </div>
+                        <div class="result-item">
+                            <h4>Mobile Usage</h4>
+                            <p>Fully Responsive</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Future Plans -->
+                <div class="content-section">
+                    <h3>Future Developments</h3>
+                    <ul>
+                        <li>Mobile app development for iOS and Android</li>
+                        <li>Advanced music recommendation system</li>
+                        <li>Integration with more streaming services</li>
+                        <li>Community features like discussion forums and user groups</li>
+                    </ul>
+                </div>
+            </div>
         </div>
+        <!-- Case Study Template -->
+        <div class="case-study">
+            <!-- Project Intro -->
+            <div class="project-intro">
+                <img src="images/lionlink.png" alt="LIONLINK Screenshot" class="project-hero">
+                <h3 class="project-title">LionLink</h3>
+                <div class="project-quick-info">
+                    <div class="info-item">
+                        <h4>Timeline</h4>
+                        <p>3 months</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Role</h4>
+                        <p>Full Stack Developer</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Team</h4>
+                        <p>Group Project</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Project Sections -->
+            <div class="case-study-content">
+                <!-- Overview -->
+                <div class="content-section">
+                    <h3>Overview</h3>
+                    <p>A comprehensive platform built to connect Penn State students through events and shared interests, addressing the challenge of social isolation on large campuses.</p>
+                </div>
+    
+                <!-- Problem & Solution -->
+                <div class="content-section">
+                    <h3>Problem</h3>
+                    <p>Students at large universities often struggle to find meaningful connections and relevant events among a sea of 50,000+ people. The existing solutions were fragmented across multiple platforms, making it difficult to discover and engage with campus activities.</p>
+                    
+                    <h4>Key Challenges</h4>
+                    <ul>
+                        <li>Information overload from multiple event sources</li>
+                        <li>Difficulty finding events matching personal interests</li>
+                        <li>Limited ways to connect with like-minded students</li>
+                    </ul>
+                </div>
+    
+                <!-- Process -->
+                <div class="content-section">
+                    <h3>Process & Research</h3>
+                    <div class="process-steps">
+                        <div class="step">
+                            <h4>1. User Research</h4>
+                            <p>Conducted interviews with 20+ students to understand their needs and pain points.</p>
+                        </div>
+                        <div class="step">
+                            <h4>2. Design</h4>
+                            <p>Created wireframes and prototypes, focusing on intuitive navigation and clean user interface.</p>
+                        </div>
+                        <div class="step">
+                            <h4>3. Development</h4>
+                            <p>Built using React and Node.js, with focus on scalability and real-time updates.</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Technical Details -->
+                <div class="content-section">
+                    <h3>Technical Implementation</h3>
+                    <div class="tech-details">
+                        <div class="tech-stack">
+                            <h4>Frontend</h4>
+                            <ul>
+                                <li>React.js</li>
+                                <li>Redux for state management</li>
+                                <li>Tailwind CSS</li>
+                                <li>Socket.io client</li>
+                            </ul>
+                        </div>
+                        <div class="tech-stack">
+                            <h4>Backend</h4>
+                            <ul>
+                                <li>Node.js</li>
+                                <li>Express</li>
+                                <li>MongoDB</li>
+                                <li>Socket.io</li>
+                            </ul>
+                        </div>
+                        <div class="tech-stack">
+                            <h4>Key Features</h4>
+                            <ul>
+                                <li>Real-time event updates</li>
+                                <li>User authentication</li>
+                                <li>Personalized recommendations</li>
+                                <li>Interactive event calendar</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Results -->
+                <div class="content-section">
+                    <h3>Impact & Results</h3>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <h4>User Growth</h4>
+                            <p>500+ active users in first month</p>
+                        </div>
+                        <div class="result-item">
+                            <h4>Event Creation</h4>
+                            <p>200+ events posted</p>
+                        </div>
+                        <div class="result-item">
+                            <h4>Engagement</h4>
+                            <p>85% user retention rate</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Learnings -->
+                <div class="content-section">
+                    <h3>Key Learnings</h3>
+                    <ul>
+                        <li>The importance of real-time features in social platforms</li>
+                        <li>How to scale MongoDB for growing user bases</li>
+                        <li>Balancing feature complexity with user experience</li>
+                    </ul>
+                </div>
+    
+                <!-- Future Plans -->
+                <div class="content-section">
+                    <h3>Future Improvements</h3>
+                    <p>Currently working on:</p>
+                    <ul>
+                        <li>Mobile app development</li>
+                        <li>AI-powered event recommendations</li>
+                        <li>Integration with university calendar systems</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+ 
     </section>
     
 

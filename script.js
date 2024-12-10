@@ -134,3 +134,25 @@ window.addEventListener('resize', function() {
         }
     }
 });
+
+// Add this to your existing JavaScript file
+
+function showProject(projectId) {
+    // Update tabs
+    document.querySelectorAll('.project-tab').forEach(tab => {
+        tab.classList.remove('active');
+    });
+    document.querySelector(`.project-tab[onclick*="${projectId}"]`).classList.add('active');
+
+    // Update content
+    document.querySelectorAll('.project-content').forEach(content => {
+        content.classList.remove('active');
+    });
+    document.getElementById(projectId).classList.add('active');
+
+    // Reset slider position for the new project
+    currentIndex = 0;
+    const slider = document.querySelector(`#${projectId} .slider`);
+    slider.style.transform = 'translateX(0)';
+}
+
