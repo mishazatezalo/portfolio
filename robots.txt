@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mishazatezalo.com/sitemap.xml

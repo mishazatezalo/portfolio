@@ -3,22 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>My Portfolio</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>Misha Zatezalo | Computer Science Student & Developer</title>
+    <meta name="title" content="Misha Zatezalo | Computer Science Student & Developer">
+    <meta name="description" content="Portfolio of Misha Zatezalo, a computer science student at Penn State with experience in full stack development and UX/UI design.">
+    <meta name="keywords" content="Misha Zatezalo, Penn State, computer science, full stack developer, UX/UI design, portfolio, web development">
+    <meta name="author" content="Misha Zatezalo">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://mishazatezalo.com">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mishazatezalo.com">
+    <meta property="og:title" content="Misha Zatezalo | Computer Science Student & Developer">
+    <meta property="og:description" content="Portfolio of Misha Zatezalo, a computer science student at Penn State with experience in full stack development and UX/UI design.">
+    <meta property="og:image" content="https://mishazatezalo.com/images/profile.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://mishazatezalo.com">
+    <meta property="twitter:title" content="Misha Zatezalo | Computer Science Student & Developer">
+    <meta property="twitter:description" content="Portfolio of Misha Zatezalo, a computer science student at Penn State with experience in full stack development and UX/UI design.">
+    <meta property="twitter:image" content="https://mishazatezalo.com/images/profile.jpg">
+    
     <link rel="stylesheet" href="./style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div></div>
     <header>
-        <h1 class="misha"> mishaa</h1><h1 class="zatezalo">zaatezaalo</h1>
+        <h1 class="misha">mishaa</h1><h1 class="zatezalo">zaatezaalo</h1>
     </header>
+    
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    
     <nav>
         <a href="#about">about me</a>
         <a href="#projects">projects</a>
         <a href="#skills">skills</a>
         <a href="#contact">contact</a>
     </nav>
+    
     <section id="about">
         <div class="about-container">
             <p class="welcome-text">welcome to my portfolio! :)</p>
@@ -65,14 +98,14 @@
                         <div class="card-icon">🏆</div>
                         <h4 class="card-title">NCWIT Award</h4>
                         <p class="card-year">2022</p>
-                        <p class="card-description">Aspirations in Computing Award - National recognition for my demonstrated passion for computing and technology, for the leadership I’ve shown in the classroom, and for my aspirations to pursue technology throughout my future journey in order to solve problems and positively impact humanity. </p>
+                        <p class="card-description">Aspirations in Computing Award - National recognition for my demonstrated passion for computing and technology, for the leadership I've shown in the classroom, and for my aspirations to pursue technology throughout my future journey in order to solve problems and positively impact humanity.</p>
                     </div>
     
                     <div class="card-item">
                         <div class="card-icon">🌟</div>
                         <h4 class="card-title">Google Scholarship</h4>
                         <p class="card-year">2023</p>
-                        <p class="card-description">I was honored to receive Google’s prestigious Code Next Scholarship, a testament to my dedication, passion, and achievements in the world of technology and innovation. This scholarship was awarded to me in recognition of my commitment to advancing my skills in computer science, my involvement in empowering underrepresented communities in tech, and my demonstrated leadership in coding initiatives.</p>
+                        <p class="card-description">I was honored to receive Google's prestigious Code Next Scholarship, a testament to my dedication, passion, and achievements in the world of technology and innovation. This scholarship was awarded to me in recognition of my commitment to advancing my skills in computer science, my involvement in empowering underrepresented communities in tech, and my demonstrated leadership in coding initiatives.</p>
                     </div>
                 </div>
             </div>
@@ -83,316 +116,69 @@
             </div>
         </div>
     </section>
+
     <section id="projects">
         <h2>projects</h2>
-        <div class="case-study">
-            <!-- Project Intro -->
-            <div class="project-intro">
-                <img src="images/aria.png" alt="Aria Music Platform Screenshot" class="project-hero">
-                <h3 class="project-title">Aria</h3>
-                <div class="project-quick-info">
-                    <div class="info-item">
-                        <h4>Timeline</h4>
-                        <p>Started August 2023</p>
-                    </div>
-                    <div class="info-item">
-                        <h4>Role</h4>
-                        <p>UX/UI Lead Designer & Frontend Developer</p>
-                    </div>
-                    <div class="info-item">
-                        <h4>Platform</h4>
-                        <p>Web Application</p>
-                    </div>
+        <div class="projects-grid">
+            <div class="project-card"">
+                <img src="images/aria.png" alt="Aria Music Platform">
+                <div class="project-card-content">
+                    <h3>Aria</h3>
+                    <p>A social platform for music enthusiasts to rate, review, and discover music - think Letterboxd, but for music.</p>
                 </div>
             </div>
-        
-            <!-- Project Sections -->
-            <div class="case-study-content">
-                <!-- Overview -->
-                <div class="content-section">
-                    <h3>Overview</h3>
-                    <p>Aria is a social platform for music enthusiasts to rate, review, and discover music - think Letterboxd, but for music. Users can share their thoughts on albums, create lists, and connect with others through their musical tastes.</p>
-                </div>
-        
-                <img src="images/aria1.png" alt="Aria Music Platform Screenshot" class="project-hero">
-        
-                <!-- Problem & Solution -->
-                <div class="content-section">
-                    <h3>Problem</h3>
-                    <p>While platforms like Spotify excel at music streaming, there's a gap in the market for dedicated music review and discussion platforms. Music lovers lack a centralized space to share detailed thoughts on albums and connect with others through meaningful music discussions.</p>
-                        
-                    <h4>Key Challenges</h4>
-                    <ul>
-                        <li>Existing platforms focus on streaming rather than community discussion</li>
-                        <li>Music enthusiasts need a dedicated space for in-depth album reviews</li>
-                        <li>Limited options for discovering music through peer recommendations</li>
-                        <li>No centralized platform for tracking listening history and ratings</li>
-                    </ul>
-                </div>
-        
-                <!-- Design Process -->
-                <div class="content-section">
-                    <h3>Design Process</h3>
-                    <div class="process-steps">
-                        <div class="step">
-                            <h4>Research & Planning</h4>
-                            <p>Analyzed successful platforms like Letterboxd and Goodreads to understand what makes social review platforms engaging. Studied music communities to identify user needs.</p>
-                        </div>
-                        <div class="step">
-                            <h4>UX/UI Design</h4>
-                            <p>Used Figma, Sketch, and Adobe XD to create intuitive interfaces focused on album discovery and review sharing. Emphasized clean typography and album artwork displays.</p>
-                        </div>
-                        <div class="step">
-                            <h4>User Testing</h4>
-                            <p>Conducted usability testing with music enthusiasts to refine the interface and feature set based on real user feedback.</p>
-                        </div>
-                    </div>
-                </div>
-        
-                <!-- Technical Implementation -->
-                <div class="content-section">
-                    <h3>Technical Implementation</h3>
-                    <div class="tech-details">
-                        <div class="tech-stack">
-                            <h4>Frontend</h4>
-                            <ul>
-                                <li>React.js for dynamic UI</li>
-                                <li>Custom CSS for responsive design</li>
-                                <li>Redux for state management</li>
-                                <li>Modern CSS Grid layouts</li>
-                            </ul>
-                        </div>
-                        <div class="tech-stack">
-                            <h4>Backend</h4>
-                            <ul>
-                                <li>Django REST framework</li>
-                                <li>PostgreSQL database</li>
-                                <li>JWT authentication</li>
-                                <li>RESTful API architecture</li>
-                            </ul>
-                        </div>
-                        <div class="tech-stack">
-                            <h4>Key Features</h4>
-                            <ul>
-                                <li>Album rating system</li>
-                                <li>Customizable review formats</li>
-                                <li>Music discovery algorithms</li>
-                                <li>Social sharing capabilities</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-        
-                <!-- Key Features -->
-                <div class="content-section">
-                    <h3>Core Features</h3>
-                    <ul>
-                        <li>Detailed album reviews with rich text formatting</li>
-                        <li>Personal music diary to track listening history</li>
-                        <li>Custom lists (e.g., "Best Albums of 2023", "Weekend Favorites")</li>
-                        <li>Social following system for discovering new music through trusted users</li>
-                        <li>Integration with Spotify API for album metadata and cover art</li>
-                        <li>Mobile-responsive design for on-the-go access</li>
-                    </ul>
-                </div>
-        
-                <!-- Technical Challenges -->
-                <div class="content-section">
-                    <h3>Technical Challenges</h3>
-                    <ul>
-                        <li>Implementing efficient search and filtering for large music catalogs</li>
-                        <li>Optimizing image loading for album artwork</li>
-                        <li>Creating a responsive layout that works well for both albums and reviews</li>
-                        <li>Ensuring 99.9% uptime while handling concurrent users</li>
-                    </ul>
-                </div>
-        
-                <!-- Results & Impact -->
-                <div class="content-section">
-                    <h3>Results</h3>
-                    <div class="results-grid">
-                        <div class="result-item">
-                            <h4>Performance</h4>
-                            <p>99.9% Uptime</p>
-                        </div>
-                        <div class="result-item">
-                            <h4>Accessibility</h4>
-                            <p>WCAG 2.1 Compliant</p>
-                        </div>
-                        <div class="result-item">
-                            <h4>Mobile Usage</h4>
-                            <p>Fully Responsive</p>
-                        </div>
-                    </div>
-                </div>
-        
-                <!-- Future Plans -->
-                <div class="content-section">
-                    <h3>Future Developments</h3>
-                    <ul>
-                        <li>Mobile app development for iOS and Android</li>
-                        <li>Advanced music recommendation system</li>
-                        <li>Integration with more streaming services</li>
-                        <li>Community features like discussion forums and user groups</li>
-                    </ul>
+            
+            <div class="project-card">
+                <img src="images/lionlink.png" alt="LionLink Platform">
+                <div class="project-card-content">
+                    <h3>LionLink</h3>
+                    <p>A comprehensive platform connecting Penn State students through events and shared interests.</p>
                 </div>
             </div>
         </div>
-        <!-- Case Study Template -->
-        <div class="case-study">
-            <!-- Project Intro -->
-            <div class="project-intro">
-                <img src="images/lionlink.png" alt="LIONLINK Screenshot" class="project-hero">
-                <h3 class="project-title">LionLink</h3>
-                <div class="project-quick-info">
-                    <div class="info-item">
-                        <h4>Timeline</h4>
-                        <p>3 months</p>
-                    </div>
-                    <div class="info-item">
-                        <h4>Role</h4>
-                        <p>Full Stack Developer</p>
-                    </div>
-                    <div class="info-item">
-                        <h4>Team</h4>
-                        <p>Group Project</p>
-                    </div>
-                </div>
-            </div>
-    
-            <!-- Project Sections -->
-            <div class="case-study-content">
-                <!-- Overview -->
-                <div class="content-section">
-                    <h3>Overview</h3>
-                    <p>A comprehensive platform built to connect Penn State students through events and shared interests, addressing the challenge of social isolation on large campuses.</p>
-                </div>
-    
-                <!-- Problem & Solution -->
-                <div class="content-section">
-                    <h3>Problem</h3>
-                    <p>Students at large universities often struggle to find meaningful connections and relevant events among a sea of 50,000+ people. The existing solutions were fragmented across multiple platforms, making it difficult to discover and engage with campus activities.</p>
-                    
-                    <h4>Key Challenges</h4>
-                    <ul>
-                        <li>Information overload from multiple event sources</li>
-                        <li>Difficulty finding events matching personal interests</li>
-                        <li>Limited ways to connect with like-minded students</li>
-                    </ul>
-                </div>
-    
-                <!-- Process -->
-                <div class="content-section">
-                    <h3>Process & Research</h3>
-                    <div class="process-steps">
-                        <div class="step">
-                            <h4>1. User Research</h4>
-                            <p>Conducted interviews with 20+ students to understand their needs and pain points.</p>
-                        </div>
-                        <div class="step">
-                            <h4>2. Design</h4>
-                            <p>Created wireframes and prototypes, focusing on intuitive navigation and clean user interface.</p>
-                        </div>
-                        <div class="step">
-                            <h4>3. Development</h4>
-                            <p>Built using React and Node.js, with focus on scalability and real-time updates.</p>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Technical Details -->
-                <div class="content-section">
-                    <h3>Technical Implementation</h3>
-                    <div class="tech-details">
-                        <div class="tech-stack">
-                            <h4>Frontend</h4>
-                            <ul>
-                                <li>React.js</li>
-                                <li>Redux for state management</li>
-                                <li>Tailwind CSS</li>
-                                <li>Socket.io client</li>
-                            </ul>
-                        </div>
-                        <div class="tech-stack">
-                            <h4>Backend</h4>
-                            <ul>
-                                <li>Node.js</li>
-                                <li>Express</li>
-                                <li>MongoDB</li>
-                                <li>Socket.io</li>
-                            </ul>
-                        </div>
-                        <div class="tech-stack">
-                            <h4>Key Features</h4>
-                            <ul>
-                                <li>Real-time event updates</li>
-                                <li>User authentication</li>
-                                <li>Personalized recommendations</li>
-                                <li>Interactive event calendar</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Results -->
-                <div class="content-section">
-                    <h3>Impact & Results</h3>
-                    <div class="results-grid">
-                        <div class="result-item">
-                            <h4>User Growth</h4>
-                            <p>500+ active users in first month</p>
-                        </div>
-                        <div class="result-item">
-                            <h4>Event Creation</h4>
-                            <p>200+ events posted</p>
-                        </div>
-                        <div class="result-item">
-                            <h4>Engagement</h4>
-                            <p>85% user retention rate</p>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Learnings -->
-                <div class="content-section">
-                    <h3>Key Learnings</h3>
-                    <ul>
-                        <li>The importance of real-time features in social platforms</li>
-                        <li>How to scale MongoDB for growing user bases</li>
-                        <li>Balancing feature complexity with user experience</li>
-                    </ul>
-                </div>
-    
-                <!-- Future Plans -->
-                <div class="content-section">
-                    <h3>Future Improvements</h3>
-                    <p>Currently working on:</p>
-                    <ul>
-                        <li>Mobile app development</li>
-                        <li>AI-powered event recommendations</li>
-                        <li>Integration with university calendar systems</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
- 
     </section>
     
-
     <section id="skills">
         <h2>skills</h2>
-        <div class="skills-container">
+        <!-- Desktop Skills Container (hidden on mobile) -->
+        <div class="skills-container desktop-only">
             <div class="skills-line">JavaScript, HTML, CSS, React, Node.js, Express.js</div>
             <div class="skills-line">Python, Java, C++, Git, REST APIs, SQL, MongoDB</div>
             <div class="skills-line">UX/UI Design, Figma, Adobe XD, Wireframing, Prototyping</div>
             <div class="skills-line">Agile Methodologies, Product Management, Leadership</div>
-            <div class="skills-line">Responsive Design, Accessibility (ARIA), Web Animations, Design Systems, User Research, Interaction Design</div>
+            <div class="skills-line">Responsive Design, Accessibility (ARIA), Web Animations, Design Systems</div>
         </div>
-
+        
+        <!-- Mobile Skills Container (hidden on desktop) -->
+        <div class="skills-mobile mobile-only">
+            <div class="skills-category">
+                <h4>Frontend</h4>
+                <p>JavaScript, HTML, CSS, React</p>
+            </div>
+            <div class="skills-category">
+                <h4>Backend</h4>
+                <p>Node.js, Express.js, Python, Java, C++</p>
+            </div>
+            <div class="skills-category">
+                <h4>Design</h4>
+                <p>UX/UI, Figma, Adobe XD, Wireframing</p>
+            </div>
+            <div class="skills-category">
+                <h4>Tools & Methods</h4>
+                <p>Git, REST APIs, SQL, MongoDB, Agile</p>
+            </div>
+            <div class="skills-category">
+                <h4>Specialties</h4>
+                <p>Responsive Design, Accessibility, Web Animations</p>
+            </div>
+        </div>
     </section>
+    
     <section id="contact">
         <h2>contact</h2>
-        <div class="card-container">
+        
+        <!-- Desktop Contact Card (hidden on mobile) -->
+        <div class="card-container desktop-only">
             <!-- Front face -->
             <div class="card-face card-front">
                 <div class="pattern-overlay"></div>
@@ -405,7 +191,7 @@
                                 <rect width="20" height="16" x="2" y="4" rx="2"/>
                                 <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
                             </svg>
-                            mishadzatezalo@gmail.com
+                            <a href="mailto:mishadzatezalo@gmail.com">mishadzatezalo@gmail.com</a>
                         </div>
                         <div class="card-logo">MZ</div>
                     </div>
@@ -432,7 +218,69 @@
                 </div>
             </div>
         </div>
+        
+        <!-- Mobile Contact Info (hidden on desktop) -->
+        <div class="contact-mobile mobile-only">
+            <div class="contact-profile">
+                <div class="contact-header">
+                    <h3>Misha Zatezalo</h3>
+                    <p>Full Stack Developer</p>
+                </div>
+                <div class="contact-links">
+                    <a href="mailto:misha.zatezalo@gmail.com" class="contact-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        <span>Email</span>
+                    </a>
+                    <a href="https://github.com/mishazatezalo" target="_blank" class="contact-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/mishazatezalo/" target="_blank" class="contact-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
 
+    <footer>
+        <p>&copy; 2024 Misha Zatezalo</p>
+    </footer>
+    
+    <!-- JSON-LD for structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Misha Zatezalo",
+      "url": "https://mishazatezalo.com",
+      "email": "misha.zatezalo@gmail.com",
+      "jobTitle": "Computer Science Student & Full Stack Developer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Penn State University"
+      },
+      "alumniOf": [
+        {
+          "@type": "Organization",
+          "name": "Kode With Klossy"
+        },
+        {
+          "@type": "Organization",
+          "name": "Girls Who Code"
+        },
+        {
+          "@type": "Organization",
+          "name": "Google Code Next"
+        }
+      ],
+      "knowsAbout": ["JavaScript", "HTML", "CSS", "React", "Node.js", "Python", "Java", "UX/UI Design"],
+      "sameAs": [
+        "https://github.com/mishazatezalo",
+        "https://www.linkedin.com/in/mishazatezalo/"
+      ]
+    }
+    </script>
 </body>
 </html>

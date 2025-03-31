@@ -1,4 +1,45 @@
 let currentIndex = 0;
+let isMenuOpen = false;
+
+// Mobile menu toggle
+function toggleMenu() {
+    const nav = document.querySelector('nav');
+    const toggle = document.querySelector('.mobile-menu-toggle');
+    
+    isMenuOpen = !isMenuOpen;
+    
+    if (isMenuOpen) {
+        nav.classList.add('active');
+        toggle.classList.add('active');
+        // Transform spans to X
+        toggle.querySelectorAll('span')[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        toggle.querySelectorAll('span')[1].style.opacity = '0';
+        toggle.querySelectorAll('span')[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+        // Prevent body scrolling
+        document.body.style.overflow = 'hidden';
+    } else {
+        nav.classList.remove('active');
+        toggle.classList.remove('active');
+        // Reset spans
+        toggle.querySelectorAll('span')[0].style.transform = 'none';
+        toggle.querySelectorAll('span')[1].style.opacity = '1';
+        toggle.querySelectorAll('span')[2].style.transform = 'none';
+        // Allow body scrolling
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Close menu when clicking a nav link
+function setupNavLinks() {
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (isMenuOpen) {
+                toggleMenu();
+            }
+        });
+    });
+}
 
 function slide(direction) {
     const slider = document.querySelector('.slider');
@@ -45,114 +86,55 @@ function slide(direction) {
 
 // Add progress dots
 document.addEventListener('DOMContentLoaded', function() {
+    // Setup mobile menu toggle
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    if (menuToggle) {
+        menuToggle.addEventListener('click', toggleMenu);
+    }
+    
+    // Setup nav links
+    setupNavLinks();
+    
+    // Setup slider if it exists
     const slider = document.querySelector('.slider-container');
-    const cards = document.querySelectorAll('.card');
-    
-    // Create progress indicator
-    const progressContainer = document.createElement('div');
-    progressContainer.className = 'slider-progress';
-    
-    cards.forEach((_, index) => {
-        const dot = document.createElement('div');
-        dot.className = 'progress-dot' + (index === 0 ? ' active' : '');
-        dot.onclick = () => {
-            currentIndex = index;
-            slide('none');
-        };
-        progressContainer.appendChild(dot);
-    });
-    
-    slider.appendChild(progressContainer);
-
-    // Set initial active state
-    cards[0].classList.add('active');
-});
-// Add this after your existing JavaScript - Mobile-only enhancements
-document.addEventListener('DOMContentLoaded', function() {
-    // Only run these functions if on mobile
-    if (window.innerWidth <= 768) {
-        addMobileCardFlip();
-        addMobileTouchSlider();
-    }
-});
-
-function addMobileCardFlip() {
-    const cardContainer = document.querySelector('.card-container');
-    if (cardContainer) {
-        let isFlipped = false;
+    if (slider) {
+        const cards = document.querySelectorAll('.card');
         
-        // Replace the existing click handler for mobile
-        cardContainer.addEventListener('click', function(e) {
-            if (window.innerWidth <= 768) {
-                isFlipped = !isFlipped;
-                this.style.transform = isFlipped ? 'rotateY(180deg)' : 'rotateY(0)';
-            }
+        // Create progress indicator
+        const progressContainer = document.createElement('div');
+        progressContainer.className = 'slider-progress';
+        
+        cards.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.className = 'progress-dot' + (index === 0 ? ' active' : '');
+            dot.onclick = () => {
+                currentIndex = index;
+                slide('none');
+            };
+            progressContainer.appendChild(dot);
         });
-    }
-}
+        
+        slider.appendChild(progressContainer);
 
-function addMobileTouchSlider() {
-    const slider = document.querySelector('.slider');
-    if (!slider) return;
-
-    let touchStartX = 0;
-    let touchEndX = 0;
-    let isDragging = false;
-
-    // Add touch events only for mobile
-    slider.addEventListener('touchstart', function(e) {
-        if (window.innerWidth <= 768) {
-            touchStartX = e.changedTouches[0].screenX;
-            isDragging = true;
-        }
-    }, { passive: true });
-
-    slider.addEventListener('touchend', function(e) {
-        if (window.innerWidth <= 768 && isDragging) {
-            touchEndX = e.changedTouches[0].screenX;
-            const difference = touchStartX - touchEndX;
-            
-            if (Math.abs(difference) > 50) { // Minimum swipe distance
-                if (difference > 0) {
-                    slide('next'); // Using your existing slide function
-                } else {
-                    slide('prev'); // Using your existing slide function
-                }
-            }
-            isDragging = false;
-        }
-    }, { passive: true });
-}
-
-// Add mobile check for resize
-window.addEventListener('resize', function() {
-    const cardContainer = document.querySelector('.card-container');
-    if (cardContainer) {
-        // Reset transform on resize if switching from mobile to desktop
-        if (window.innerWidth > 768) {
-            cardContainer.style.transform = '';
-        }
+        // Set initial active state
+        cards[0].classList.add('active');
     }
 });
 
-// Add this to your existing JavaScript file
-
-function showProject(projectId) {
-    // Update tabs
-    document.querySelectorAll('.project-tab').forEach(tab => {
-        tab.classList.remove('active');
-    });
-    document.querySelector(`.project-tab[onclick*="${projectId}"]`).classList.add('active');
-
-    // Update content
-    document.querySelectorAll('.project-content').forEach(content => {
-        content.classList.remove('active');
-    });
-    document.getElementById(projectId).classList.add('active');
-
-    // Reset slider position for the new project
-    currentIndex = 0;
-    const slider = document.querySelector(`#${projectId} .slider`);
-    slider.style.transform = 'translateX(0)';
-}
-
+// Handle window resize
+window.addEventListener('resize', function() {
+    // Reset menu if window is resized larger than mobile breakpoint
+    if (window.innerWidth > 768 && isMenuOpen) {
+        isMenuOpen = false;
+        document.querySelector('nav').classList.remove('active');
+        document.body.style.overflow = 'auto';
+        
+        const toggle = document.querySelector('.mobile-menu-toggle');
+        if (toggle) {
+            toggle.classList.remove('active');
+            toggle.querySelectorAll('span')[0].style.transform = 'none';
+            toggle.querySelectorAll('span')[1].style.opacity = '1';
+            toggle.querySelectorAll('span')[2].style.transform = 'none';
+        }
+    }
+});
